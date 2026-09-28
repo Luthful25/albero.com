@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | ALBERO STUDIO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css?v=2" />
+  <script src="admin.js?v=2" defer></script>
+</head>
+
+<body>
+  <section class="admin-login" id="loginView">
+    <form class="login-card" id="loginForm" autocomplete="on">
+      <a class="login-logo" href="index.html" aria-label="ALBERO STUDIO home">
+        <img src="assets/logo-site.png" alt="" />
+      </a>
+      <h1>Admin Login</h1>
+
+      <label>
+        <span>Username</span>
+        <input type="text" name="username" autocomplete="username" required />
+      </label>
+
+      <label>
+        <span>Password</span>
+        <input type="password" name="password" autocomplete="current-password" required />
+      </label>
+
+      <button class="primary-btn" type="submit">Login</button>
+      <p class="form-note" id="loginMessage" role="alert"></p>
+    </form>
+  </section>
+
+  <div class="admin-app" id="appView" hidden>
+    <header class="admin-topbar">
+      <a class="admin-brand" href="index.html" aria-label="ALBERO STUDIO home">
+        <img src="assets/logo-site.png" alt="" />
+      </a>
+
+      <div class="admin-topbar__actions">
+        <span class="api-status" id="apiStatus">API ready</span>
+        <button class="ghost-btn" id="refreshBtn" type="button">Refresh</button>
+        <button class="danger-btn" id="logoutBtn" type="button">Logout</button>
+      </div>
+    </header>
+
+    <div class="admin-layout">
+      <aside class="admin-sidebar" aria-label="Admin sections">
+        <button class="nav-tab is-active" type="button" data-view="overview">Overview</button>
+        <button class="nav-tab" type="button" data-view="blog">Blog</button>
+        <button class="nav-tab" type="button" data-view="cases">Case Studies</button>
+        <button class="nav-tab" type="button" data-view="contacts">Contacts</button>
+        <button class="nav-tab" type="button" data-view="support">Support</button>
+        <button class="nav-tab" type="button" data-view="newsletter">Newsletter</button>
+        <button class="nav-tab" type="button" data-view="accounts">Accounts</button>
+        <button class="nav-tab" type="button" data-view="leads">CRM Leads</button>
+        <button class="nav-tab" type="button" data-view="quotes">Quotations</button>
+        <button class="nav-tab" type="button" data-view="clients">Clients</button>
+        <button class="nav-tab" type="button" data-view="analytics">Analytics</button>
+      </aside>
+
+      <main class="admin-main">
+        <div class="admin-notice" id="adminNotice" role="status" aria-live="polite"></div>
+
+        <section class="admin-panel is-active" data-panel="overview">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Control Center</p>
+              <h1>Dashboard</h1>
+            </div>
+          </div>
+          <div class="stat-grid" id="summaryGrid"></div>
+        </section>
+
+        <section class="admin-panel" data-panel="blog">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Content</p>
+              <h1>Blog Posts</h1>
+            </div>
+            <button class="primary-btn" type="button" data-content-new="blog">New Post</button>
+          </div>
+
+          <div class="editor-grid">
+            <div class="table-panel">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="blogRows"></tbody>
+              </table>
+            </div>
+
+            <form class="editor-form" id="blogForm">
+              <input type="hidden" name="id" />
+              <div class="form-grid">
+                <label>
+                  <span>Title</span>
+                  <input type="text" name="title" required />
+                </label>
+                <label>
+                  <span>Slug</span>
+                  <input type="text" name="slug" required />
+                </label>
+                <label>
+                  <span>Category</span>
+                  <input type="text" name="category" required />
+                </label>
+                <label>
+                  <span>Author</span>
+                  <input type="text" name="author" value="Albero Team" />
+                </label>
+                <label>
+                  <span>Status</span>
+                  <select name="status">
+                    <option value="draft">Draft</option>
+                    <option value="published">Published</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Published At</span>
+                  <input type="datetime-local" name="publishedAt" required />
+                </label>
+                <label class="full-field">
+                  <span>Image URL</span>
+                  <input type="url" name="imageUrl" />
+                </label>
+                <label class="full-field">
+                  <span>Image Alt</span>
+                  <input type="text" name="imageAlt" />
+                </label>
+                <label class="full-field">
+                  <span>Excerpt</span>
+                  <textarea name="excerpt" rows="3" required></textarea>
+                </label>
+                <label class="full-field">
+                  <span>Content</span>
+                  <textarea name="content" rows="9"></textarea>
+                </label>
+              </div>
+              <div class="form-actions">
+                <button class="primary-btn" type="submit">Save Blog</button>
+                <button class="ghost-btn" type="button" data-content-new="blog">Clear</button>
+                <button class="danger-btn" type="button" data-content-delete="blog">Delete</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="cases">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Content</p>
+              <h1>Case Studies</h1>
+            </div>
+            <button class="primary-btn" type="button" data-content-new="case">New Case</button>
+          </div>
+
+          <div class="editor-grid">
+            <div class="table-panel">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Client</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="caseRows"></tbody>
+              </table>
+            </div>
+
+            <form class="editor-form" id="caseForm">
+              <input type="hidden" name="id" />
+              <div class="form-grid">
+                <label>
+                  <span>Title</span>
+                  <input type="text" name="title" required />
+                </label>
+                <label>
+                  <span>Slug</span>
+                  <input type="text" name="slug" required />
+                </label>
+                <label>
+                  <span>Category</span>
+                  <input type="text" name="category" required />
+                </label>
+                <label>
+                  <span>Client</span>
+                  <input type="text" name="clientName" />
+                </label>
+                <label>
+                  <span>Author</span>
+                  <input type="text" name="author" value="Albero Team" />
+                </label>
+                <label>
+                  <span>Status</span>
+                  <select name="status">
+                    <option value="draft">Draft</option>
+                    <option value="published">Published</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Published At</span>
+                  <input type="datetime-local" name="publishedAt" required />
+                </label>
+                <label class="full-field">
+                  <span>Image URL</span>
+                  <input type="url" name="imageUrl" />
+                </label>
+                <label class="full-field">
+                  <span>Image Alt</span>
+                  <input type="text" name="imageAlt" />
+                </label>
+                <label class="full-field">
+                  <span>Excerpt</span>
+                  <textarea name="excerpt" rows="3" required></textarea>
+                </label>
+                <label class="full-field">
+                  <span>Challenge</span>
+                  <textarea name="challenge" rows="4"></textarea>
+                </label>
+                <label class="full-field">
+                  <span>Solution</span>
+                  <textarea name="solution" rows="4"></textarea>
+                </label>
+                <label class="full-field">
+                  <span>Outcome</span>
+                  <textarea name="outcome" rows="4"></textarea>
+                </label>
+              </div>
+              <div class="form-actions">
+                <button class="primary-btn" type="submit">Save Case</button>
+                <button class="ghost-btn" type="button" data-content-new="case">Clear</button>
+                <button class="danger-btn" type="button" data-content-delete="case">Delete</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="contacts">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Inbox</p>
+              <h1>Contact Messages</h1>
+            </div>
+          </div>
+          <div class="table-panel wide-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Message</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="contactRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="support">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Inbox</p>
+              <h1>Support Requests</h1>
+            </div>
+          </div>
+          <div class="table-panel wide-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Subject</th>
+                  <th>Message</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="supportRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="newsletter">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Audience</p>
+              <h1>Newsletter Subscribers</h1>
+            </div>
+          </div>
+          <div class="table-panel wide-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Source</th>
+                  <th>Status</th>
+                  <th>Subscribed</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="newsletterRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="accounts">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Accounts</p>
+              <h1>Login Requests</h1>
+            </div>
+          </div>
+          <div class="table-panel wide-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Source</th>
+                  <th>IP</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="accountRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="leads">
+          <div class="section-head"><div><p class="eyebrow">CRM</p><h1>Lead Pipeline</h1></div></div>
+          <div class="table-panel wide-table"><table><thead><tr><th>Lead</th><th>Company</th><th>Service</th><th>Score</th><th>Priority</th><th>Status</th><th>Follow-up</th></tr></thead><tbody id="leadRows"></tbody></table></div>
+        </section>
+
+        <section class="admin-panel" data-panel="quotes">
+          <div class="section-head"><div><p class="eyebrow">Sales</p><h1>Quotation Requests</h1></div></div>
+          <div class="table-panel wide-table"><table><thead><tr><th>Requester</th><th>Service</th><th>Budget</th><th>Currency</th><th>Status</th><th>Date</th></tr></thead><tbody id="quoteRows"></tbody></table></div>
+        </section>
+
+        <section class="admin-panel" data-panel="clients">
+          <div class="section-head"><div><p class="eyebrow">Portal</p><h1>Client Access</h1></div></div>
+          <div class="table-panel wide-table"><table><thead><tr><th>Name</th><th>Email</th><th>Company</th><th>Status</th><th>Created</th></tr></thead><tbody id="clientRows"></tbody></table></div>
+        </section>
+
+        <section class="admin-panel" data-panel="analytics">
+          <div class="section-head"><div><p class="eyebrow">Insights</p><h1>Analytics</h1></div></div>
+          <div class="stat-grid" id="analyticsGrid"></div>
+          <div class="table-panel wide-table"><table><thead><tr><th>Event</th><th>Total</th></tr></thead><tbody id="analyticsRows"></tbody></table></div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

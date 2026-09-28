@@ -1,0 +1,19 @@
+{
+  "name": "albero-studio-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deployable frontend and Node.js backend for Albero Studio.",
+  "scripts": {
+    "postinstall": "npm --prefix backend install",
+    "build": "npm --prefix backend run build",
+    "start": "npm --prefix backend start",
+    "admin:hash": "npm --prefix backend run admin:hash --",
+    "check": "npm --prefix backend run check",
+    "deploy:check": "npm --prefix backend run deploy:check",
+    "db:start": "powershell -ExecutionPolicy Bypass -File backend/scripts/start-local-db.ps1",
+    "db:setup": "powershell -ExecutionPolicy Bypass -File backend/scripts/setup-local-db.ps1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

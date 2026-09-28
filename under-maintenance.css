@@ -1,0 +1,179 @@
+:root {
+  --maintenance-ink: #142654;
+  --maintenance-muted: #65779e;
+  --maintenance-blue: #3158ff;
+  --maintenance-line: #dce5f7;
+}
+
+body.maintenance-template {
+  min-height: 100vh;
+  color: var(--maintenance-ink);
+  background:
+    radial-gradient(circle at 12% 16%, rgba(82, 113, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 88% 75%, rgba(91, 214, 215, 0.13), transparent 28%),
+    #f4f7fd;
+}
+
+.maintenance-page {
+  position: relative;
+  isolation: isolate;
+  min-height: min(720px, calc(100vh - var(--site-header-height)));
+  display: grid;
+  place-items: center;
+  padding: clamp(4rem, 9vw, 8rem) 1.25rem;
+  overflow: hidden;
+}
+
+.maintenance-page::before,
+.maintenance-page::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(49, 88, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.maintenance-page::before {
+  width: 27rem;
+  height: 27rem;
+  top: -13rem;
+  right: -7rem;
+}
+
+.maintenance-page::after {
+  width: 18rem;
+  height: 18rem;
+  bottom: -10rem;
+  left: -5rem;
+}
+
+.maintenance-card {
+  width: min(100%, 760px);
+  padding: clamp(2rem, 5vw, 4.5rem);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--maintenance-line);
+  border-radius: 2rem;
+  box-shadow: 0 2rem 5rem rgba(28, 55, 111, 0.12);
+}
+
+.maintenance-card__mark {
+  width: 4.25rem;
+  height: 4.25rem;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1.75rem;
+  color: #fff;
+  background: linear-gradient(145deg, #4b6fff, #263fc0);
+  border-radius: 1.35rem;
+  box-shadow: 0 1rem 2rem rgba(49, 88, 255, 0.24);
+}
+
+.maintenance-card__mark svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.maintenance-card__eyebrow {
+  margin-bottom: 0.85rem;
+  color: var(--maintenance-blue);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.maintenance-card h1 {
+  max-width: 14ch;
+  margin: 0 auto 1rem;
+  color: var(--maintenance-ink);
+  font-family: "Sora", "Inter", sans-serif;
+  font-size: clamp(2.25rem, 6vw, 4.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+
+.maintenance-card__message {
+  max-width: 34rem;
+  margin: 0 auto;
+  color: var(--maintenance-muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.maintenance-card__target {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin-top: 1.5rem;
+  padding: 0.65rem 1rem;
+  color: var(--maintenance-ink);
+  background: #eef3ff;
+  border: 1px solid #d8e3ff;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.maintenance-card__target[hidden] {
+  display: none;
+}
+
+.maintenance-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.maintenance-card__actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.maintenance-card__actions a:hover {
+  transform: translateY(-2px);
+}
+
+.maintenance-card__actions a:focus-visible {
+  outline: 3px solid rgba(49, 88, 255, 0.3);
+  outline-offset: 3px;
+}
+
+.maintenance-card__primary {
+  color: #fff;
+  background: var(--maintenance-blue);
+  box-shadow: 0 0.9rem 1.6rem rgba(49, 88, 255, 0.2);
+}
+
+.maintenance-card__primary:hover {
+  background: #2344d9;
+  box-shadow: 0 1.1rem 2rem rgba(49, 88, 255, 0.26);
+}
+
+.maintenance-card__secondary {
+  color: var(--maintenance-ink);
+  background: #fff;
+  border: 1px solid var(--maintenance-line);
+}
+
+@media (max-width: 520px) {
+  .maintenance-page {
+    min-height: calc(100vh - var(--site-header-height));
+    padding-inline: 1rem;
+  }
+
+  .maintenance-card {
+    border-radius: 1.5rem;
+  }
+
+  .maintenance-card__actions a {
+    width: 100%;
+  }
+}

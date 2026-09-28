@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under Maintenance | Albero Studio</title>
+  <meta name="description" content="This Albero Studio page is being prepared and will be available soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="site-header.css" />
+  <link rel="stylesheet" href="corp-footer.css" />
+  <link rel="stylesheet" href="under-maintenance.css" />
+  <script src="shell.js" defer></script>
+  <script src="site-enhancements.js" defer></script>
+</head>
+
+<body class="maintenance-template">
+  <div data-site-header></div>
+
+  <main class="maintenance-page" aria-labelledby="maintenanceHeading">
+    <section class="maintenance-card">
+      <div class="maintenance-card__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M14.6 5.2a4.2 4.2 0 0 0 5.1 5.1l-8.9 8.9a2.3 2.3 0 0 1-3.3-3.3l8.9-8.9a4.2 4.2 0 0 0-1.8-1.8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="m6.2 17.8 1.9 1.9M16.2 7.8l1.9 1.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </div>
+      <p class="maintenance-card__eyebrow">Coming soon</p>
+      <h1 id="maintenanceHeading">We’re getting this ready.</h1>
+      <p class="maintenance-card__message">This page is currently under maintenance. We’re preparing something useful and will make it available soon.</p>
+      <p class="maintenance-card__target" data-maintenance-target hidden><span>Preparing:</span> <strong></strong></p>
+      <div class="maintenance-card__actions">
+        <a class="maintenance-card__primary" href="company.html">Back to Company</a>
+        <a class="maintenance-card__secondary" href="index.html">Go to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script>
+    const maintenanceTarget = document.querySelector("[data-maintenance-target]");
+    const maintenanceTargetText = maintenanceTarget?.querySelector("strong");
+    const item = new URLSearchParams(window.location.search).get("item");
+
+    if (item && maintenanceTarget && maintenanceTargetText) {
+      maintenanceTargetText.textContent = item;
+      maintenanceTarget.hidden = false;
+    }
+  </script>
+</body>
+
+</html>

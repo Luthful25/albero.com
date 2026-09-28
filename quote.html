@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Quotation | Albero Studio</title>
+  <meta name="description" content="Request a tailored technology quotation from Albero Studio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="site-header.css" />
+  <link rel="stylesheet" href="corp-footer.css" />
+  <link rel="stylesheet" href="quote.css" />
+  <script src="shell.js" defer></script>
+  <script src="api-client.js" defer></script>
+  <script src="site-enhancements.js" defer></script>
+</head>
+
+<body class="page-hero-layout quote-template">
+  <div data-site-header></div>
+
+  <main>
+    <section class="page-hero quote-page-hero" aria-labelledby="quoteHeroHeading">
+      <div class="page-hero__wrap">
+        <div>
+          <p class="quote-hero__eyebrow">PROJECT PLANNING</p>
+          <h1 id="quoteHeroHeading" class="page-hero__title">Quotation</h1>
+        </div>
+        <nav class="page-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="page-breadcrumb__dot" aria-hidden="true"></span>
+          <span aria-current="page">Quotation</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="quote-page" aria-labelledby="quoteHeading">
+      <div class="quote-card">
+        <p class="quote-card__eyebrow">Project planning</p>
+        <h2 id="quoteHeading">Start with a clear brief.</h2>
+        <p>Tell us what you are building, what needs to improve, and where you need support. Our team will review the request and respond with the right next step.</p>
+
+        <form class="quote-form" method="post" action="#">
+          <label>Name<input name="name" autocomplete="name" required /></label>
+          <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+          <label>Phone<input name="phone" autocomplete="tel" /></label>
+          <label>Company<input name="company" autocomplete="organization" /></label>
+          <label>Service<select name="service" required><option value="">Select a service</option><option>Cybersecurity</option><option>AI and Machine Learning</option><option>Cloud and Data Systems</option><option>Software Engineering</option><option>Research and Prototyping</option></select></label>
+          <label>Estimated budget<select name="budget"><option value="">Select a range</option><option>Under BDT 250,000</option><option>BDT 250,000&ndash;750,000</option><option>BDT 750,000&ndash;1,500,000</option><option>Above BDT 1,500,000</option></select></label>
+          <label class="quote-form__full">Project brief<textarea name="brief" minlength="20" required placeholder="What would you like to build or improve?"></textarea></label>
+          <p data-form-status role="status" aria-live="polite"></p>
+          <button type="submit">Request quotation <span aria-hidden="true">&rarr;</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+
+</html>

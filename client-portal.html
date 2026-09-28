@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Portal | Albero Studio</title>
+  <meta name="description" content="Secure Albero Studio client project portal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="site-header.css" /><link rel="stylesheet" href="corp-footer.css" /><link rel="stylesheet" href="client-portal.css" />
+  <script src="shell.js" defer></script><script src="client-portal.js" defer></script><script src="site-enhancements.js" defer></script>
+</head>
+<body class="page-hero-layout">
+  <div data-site-header></div>
+  <main class="portal-page">
+    <section class="page-hero portal-page-hero" aria-labelledby="portalHeading">
+      <div class="page-hero__wrap">
+        <div>
+          <p class="portal-page-hero__kicker">SECURE WORKSPACE</p>
+          <h1 id="portalHeading" class="page-hero__title">Client portal</h1>
+        </div>
+        <nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="page-breadcrumb__dot" aria-hidden="true"></span><span aria-current="page">Client Portal</span></nav>
+      </div>
+    </section>
+
+    <section class="portal-content" aria-label="Client portal access">
+      <div class="portal-shell portal-layout">
+        <aside class="portal-aside">
+          <p class="portal-eyebrow">YOUR WORKSPACE</p>
+          <h2>Your project, all in one place.</h2>
+          <p>Keep project updates, quotations, and order information close at hand while the work moves forward.</p>
+          <ul class="portal-benefits">
+            <li><span aria-hidden="true">01</span><div><strong>Project updates</strong><small>See the latest progress and next steps.</small></div></li>
+            <li><span aria-hidden="true">02</span><div><strong>Quotations &amp; orders</strong><small>Review the information connected to your work.</small></div></li>
+            <li><span aria-hidden="true">03</span><div><strong>Clear communication</strong><small>Keep every important detail in context.</small></div></li>
+          </ul>
+          <div class="portal-aside__note"><span class="portal-aside__note-icon" aria-hidden="true">?</span><div><strong>Need help?</strong><a href="contact.html">Contact Albero Studio</a></div></div>
+        </aside>
+
+        <section class="portal-card" aria-labelledby="portalLoginHeading">
+          <div data-portal-login>
+            <h2 id="portalLoginHeading">Sign in to your portal</h2>
+            <p>Use your client credentials to access your project workspace.</p>
+            <form class="portal-form">
+              <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+              <label>Password<input type="password" name="password" autocomplete="current-password" required minlength="12" /></label>
+              <p data-portal-status role="status" aria-live="polite"></p>
+              <button type="submit">Sign in <span aria-hidden="true">→</span></button>
+            </form>
+          </div>
+          <div class="portal-dashboard" data-portal-dashboard hidden>
+            <div class="portal-dashboard__head"><div><p class="portal-eyebrow">ACTIVE WORKSPACE</p><h2>Welcome, <span data-portal-user>client</span></h2><p>Your Albero Studio workspace.</p></div><button class="portal-logout" type="button" data-portal-logout>Sign out</button></div>
+            <div class="portal-dashboard__summary"><div><span>Workspace status</span><strong>Active</strong></div><div><span>Support</span><strong>Available</strong></div></div>
+            <div class="portal-order-list" data-portal-orders></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <div data-site-footer></div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products in Development | Albero Studio</title>
+  <meta name="description" content="Albero Studio is researching and engineering future products across cybersecurity, AI, machine learning, and intelligent systems." />
+  <meta property="og:title" content="Products in Development | Albero Studio" />
+  <meta property="og:description" content="Proprietary technology will be announced as research becomes validated product capability." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="client.css" />
+  <link rel="stylesheet" href="corp-footer.css" />
+  <link rel="stylesheet" href="site-header.css" />
+  <script src="site-enhancements.js" defer></script>
+</head>
+<body class="page-hero-layout product-page">
+  <header class="corp-header" id="corpHeader">
+    <div class="corp-top-nav"><div class="container corp-top-nav-inner">
+      <a href="index.html" class="corp-logo-card" aria-label="Albero Studio home"><img class="corp-logo-img" src="assets/logo-site.png" alt="Albero Studio" /></a>
+      <nav class="corp-main-nav" aria-label="Primary">
+        <div class="nav-primary-item"><a href="index.html" class="products-trigger">Home</a></div>
+        <div class="nav-primary-item"><a href="company.html" class="products-trigger">Company</a></div>
+        <div class="nav-primary-item"><a href="services.html" class="products-trigger">Technology</a></div>
+        <div class="nav-primary-item"><a href="products.html" class="products-trigger is-current" aria-current="page">Products</a></div>
+        <div class="nav-primary-item"><a href="blog.html" class="products-trigger">Research</a></div>
+        <div class="nav-primary-item"><a href="learning-zone.html" class="products-trigger">Learning Zone</a></div>
+        <div class="nav-primary-item"><a href="careers.html" class="products-trigger">Careers</a></div>
+        <div class="nav-primary-item"><a href="contact.html" class="products-trigger">Contact</a></div>
+      </nav>
+      <div class="corp-right-actions" aria-label="Header actions"><button type="button" class="corp-icon-btn hero-lines-btn" aria-label="Open menu" aria-controls="corpMobileMenu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+      <button class="corp-menu-btn" id="corpMenuBtn" type="button" aria-expanded="false" aria-controls="corpMobileMenu" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div></div>
+    <nav class="corp-mobile-menu" id="corpMobileMenu" aria-label="Mobile menu">
+      <a href="index.html">Home</a><a href="company.html">Company</a><a href="services.html">Technology</a><a href="products.html" aria-current="page">Products</a><a href="blog.html">Research</a><a href="learning-zone.html">Learning Zone</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="client-page case-grid-page">
+    <section class="page-hero" aria-labelledby="productsHeading">
+      <div class="page-hero__wrap"><h1 id="productsHeading" class="page-hero__title">Products in Development</h1><nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="page-breadcrumb__dot" aria-hidden="true"></span><span aria-current="page">Products</span></nav></div>
+    </section>
+    <section class="case-listing product-listing" aria-labelledby="productListingHeading">
+      <div class="case-listing__wrap">
+        <div class="product-listing__intro">
+          <div>
+            <p class="product-listing__eyebrow">FROM RESEARCH TO PRODUCT</p>
+            <h2 class="case-listing__heading" id="productListingHeading">A clear path from useful research to real products.</h2>
+            <p class="product-listing__description">We do not publish invented products or unsupported claims. These tracks show the product architecture we are preparing as our research matures.</p>
+          </div>
+          <div class="product-listing__signal" aria-label="Product development principle">
+            <span class="product-listing__signal-mark">3C</span>
+            <span><strong>Consistency &middot; Clarity &middot; Conscience</strong><small>Progress with purpose.</small></span>
+          </div>
+        </div>
+        <div class="product-listing__path" aria-label="Product development path">
+          <div><span>01</span><strong>Research</strong><small>Ask better questions</small></div><i aria-hidden="true">→</i>
+          <div><span>02</span><strong>Prototype</strong><small>Test useful ideas</small></div><i aria-hidden="true">→</i>
+          <div><span>03</span><strong>Product</strong><small>Build what is ready</small></div>
+        </div>
+        <div class="product-listing__toolbar">
+          <div><span class="product-listing__toolbar-label">PRODUCT PIPELINE</span><strong>Follow the work as it develops.</strong></div>
+          <label for="productFilter">View by status
+            <select id="productFilter" data-filter-target="#productGrid .case-card"><option value="all">All statuses</option><option value="research">Research</option><option value="prototype">Prototype</option><option value="development">Development</option><option value="coming soon">Coming Soon</option></select>
+          </label>
+        </div>
+        <div class="case-card-grid" id="productGrid">
+          <article class="case-card product-card product-card--research" id="security-intelligence" data-filter-value="research"><div class="product-card__media"><img class="case-card__image" src="assets/hero-cyber-security.png" alt="Cybersecurity intelligence visualization" /><span class="product-card__index">01</span><span class="product-card__status">Research</span></div><div class="case-card__body"><div class="product-card__topline"><span class="case-card__category">Security track</span><span>Explore</span></div><h2>Security Intelligence</h2><p>Exploring tools that help teams understand security signals, reduce uncertainty, and make safer decisions.</p><a class="case-card__button" href="contact.html?subject=Security%20Intelligence">Discuss the research <span aria-hidden="true">↗</span></a></div></article>
+          <article class="case-card product-card product-card--prototype" id="intelligent-systems" data-filter-value="prototype"><div class="product-card__media"><img class="case-card__image" src="assets/about-vr-lab.png" alt="Technology research laboratory" /><span class="product-card__index">02</span><span class="product-card__status">Prototype</span></div><div class="case-card__body"><div class="product-card__topline"><span class="case-card__category">Systems track</span><span>Test</span></div><h2>Intelligent Systems</h2><p>Early work around AI-assisted workflows and domain-specific systems that help people do meaningful work.</p><a class="case-card__button" href="contact.html?subject=Intelligent%20Systems">Discuss the research <span aria-hidden="true">↗</span></a></div></article>
+          <article class="case-card product-card product-card--future" id="future-platforms" data-filter-value="coming soon"><div class="product-card__media"><img class="case-card__image" src="assets/service.jpg" alt="Enterprise technology platform" /><span class="product-card__index">03</span><span class="product-card__status">Coming soon</span></div><div class="case-card__body"><div class="product-card__topline"><span class="case-card__category">Platform track</span><span>Prepare</span></div><h2>Future Platforms</h2><p>Placeholders for future proprietary platforms shaped by research, engineering practice, and real-world learning.</p><a class="case-card__button" href="contact.html?subject=Future%20Platforms">Stay connected <span aria-hidden="true">↗</span></a></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="corp-footer" id="footer">
+    <div class="corp-footer__inner">
+      <div class="corp-footer__main">
+        <a href="index.html" class="corp-footer__logo" aria-label="Albero Studio home"><img class="corp-footer__logo-img" src="assets/logo-site.png" alt="Albero Studio" loading="lazy" /></a>
+        <nav class="corp-footer__nav" aria-label="Footer navigation">
+          <a href="company.html">Company</a><a href="services.html">Technology</a><a href="products.html">Products</a>
+          <a href="blog.html">Research</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a><a href="quote.html">Quotation</a><a href="client-portal.html">Client Portal</a>
+        </nav>
+        <div class="corp-footer__contact" aria-label="Contact">
+          <a href="mailto:hello@alberostudio.com">hello@alberostudio.com</a>
+          <a href="tel:+8801315963305">+880 1315 963305</a>
+        </div>
+        <div class="corp-footer__socials" aria-label="Social links">
+          <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5H16V5.5H13.6C11.1 5.5 9.5 7.1 9.5 9.6V11.5H7V14.5H9.5V20H12.5V14.5H15.2L15.8 11.5H12.5V10.1C12.5 9.2 13.1 8.5 14 8.5Z" fill="currentColor" /></svg></a>
+          <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.4C20.6 7.5 19.9 6.8 19 6.6C17.4 6.2 12 6.2 12 6.2C12 6.2 6.6 6.2 5 6.6C4.1 6.8 3.4 7.5 3.2 8.4C2.8 10 2.8 12 2.8 12C2.8 12 2.8 14 3.2 15.6C3.4 16.5 4.1 17.2 5 17.4C6.6 17.8 12 17.8 12 17.8C12 17.8 17.4 17.8 19 17.4C19.9 17.2 20.6 17.4 20.8 15.6C21.2 14 21.2 12 21.2 12C21.2 12 21.2 10 20.8 8.4ZM10.3 14.3V9.7L14.7 12L10.3 14.3Z" fill="currentColor" /></svg></a>
+          <a href="mailto:hello@alberostudio.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.8" y="5" width="18.4" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8" /><path d="M4.8 7L12 12.3L19.2 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+        </div>
+      </div>
+      <div class="corp-footer__principles" aria-label="Albero Studio focus"><div><span>OUR FOCUS</span><strong>Secure intelligence</strong><small>Cybersecurity, AI, and engineering for useful progress.</small></div><div><span>OUR 3C THEORY</span><strong>Consistency · Clarity · Conscience</strong><small>A practical philosophy for responsible technology.</small></div><div><span>OUR ORIGIN</span><strong>Built in Bangladesh</strong><small>Designed for teams and possibilities around the world.</small></div></div>
+      <div class="corp-footer__bottom"><p class="corp-footer__copyright">&copy; <span data-current-year>2026</span> Albero Studio. All rights reserved.</p><a class="corp-footer__legal-link" href="privacy.html">Privacy Policy</a></div>
+    </div>
+  </footer>
+  <script>
+    const menuButton = document.getElementById("corpMenuBtn");
+    const linesButton = document.querySelector(".hero-lines-btn");
+    const mobileMenu = document.getElementById("corpMobileMenu");
+    const toggleMenu = (open) => { menuButton?.setAttribute("aria-expanded", String(open)); linesButton?.setAttribute("aria-expanded", String(open)); mobileMenu?.classList.toggle("open", open); document.body.classList.toggle("menu-open", open); };
+    menuButton?.addEventListener("click", () => toggleMenu(menuButton.getAttribute("aria-expanded") !== "true"));
+    linesButton?.addEventListener("click", () => toggleMenu(linesButton.getAttribute("aria-expanded") !== "true"));
+    mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => toggleMenu(false)));
+  </script>
+</body>
+</html>
